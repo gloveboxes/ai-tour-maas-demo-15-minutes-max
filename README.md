@@ -18,7 +18,10 @@ Set these two sets of environment variables before running the sample. The endpo
 
 ## Demo hints
 
-This demo is best served in debug mode.
+- This demo is best served in debug mode.
+- Be sure to create your Codespace before the demo as it'll take a minute or two to set up.
+
+Follow these steps:
 
 1. The project is set up to run in GitHub Codespaces. From [ai-tour-maas-demo-1](https://github.com/gloveboxes/ai-tour-maas-demo-1), select **<> Code** and then **Open with Codespaces**.
 2. Open the `main.py` file.
