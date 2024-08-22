@@ -1,6 +1,6 @@
 # Demo objective
 
-Very simple demo to highlight the use of the PHI and MISTRAL APIs using the Azure AI Inference SDK and switch between the models with no code changes.
+This demo showcases how to use the PHI and MISTRAL APIs with the Azure AI Inference SDK, allowing you to switch between models without changing the code.
 
 ### GitHub Codespaces
 
