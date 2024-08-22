@@ -6,9 +6,9 @@ Very simple demo to highlight the use of the PHI and MISTRAL APIs using the Azur
 
 This demo is best served in debug more.
 
-1. The project is set up to run in GitHub Codespaces. You can also run it locally.
+1. The project is set up to run in GitHub Codespaces. From [ai-tour-maas-demo-1](https://github.com/gloveboxes/ai-tour-maas-demo-1), select **<> Code** and then **Open with Codespaces**.
 2. Open the `main.py` file.
-3. Set a breakpoint at the line where the model is loaded at `client = ChatCompletionsClient(`
+3. Set a breakpoint at the line where the model is loaded at `client = ChatCompletionsClient(`.
 4. Set a breakpoint at the line `model_info = client.get_model_info()` to see the model information.
 5. Press F5 to start the debug session.
 6. Single step through the code to see the model info and the completion results.
