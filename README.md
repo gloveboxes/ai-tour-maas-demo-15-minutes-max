@@ -20,8 +20,6 @@ Set these two sets of environment variables before running the sample. The endpo
 
 This demo is best served in debug mode.
 
-**Because the demo is to be run in debug mode the model keys are obfuscated as they will be visible in the live debug session.**
-
 1. The project is set up to run in GitHub Codespaces. From [ai-tour-maas-demo-1](https://github.com/gloveboxes/ai-tour-maas-demo-1), select **<> Code** and then **Open with Codespaces**.
 2. Open the `main.py` file.
 3. Set the following breakpoints:
