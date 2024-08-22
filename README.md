@@ -2,6 +2,20 @@
 
 Very simple demo to highlight the use of the PHI and MISTRAL APIs using the Azure AI Inference SDK and switch between the models with no code changes.
 
+## Demo set up
+
+Set these two sets of environment variables before running the sample. The endpoint and key values can be found in the AI Studio portal.
+
+1. Rename the `.env.sample` file to `.env`.
+2. Add the following values to the `.env` file:
+
+    ```bash
+    PHI_ENDPOINT=<your_PHI_endpoint>
+    PHI_KEY=<your_PHI_key>
+    MISTRAL_ENDPOINT=<your_MISTRAL_endpoint>
+    MISTRAL_KEY=<your_MISTRAL_key>
+    ```
+
 ## Demo hints
 
 This demo is best served in debug more.
@@ -14,13 +28,4 @@ This demo is best served in debug more.
 6. Single step through the code to see the model info and the completion results.
 7. Uncomment the `# endpoint, key = config.get("mistral")` line to switch models and rerun the demo.
 
-## Environment variables
 
-Set these two sets of environment variables before running the sample. The endpoint and key values can be found in the AI Studio portal.
-
-```bash
-PHI_ENDPOINT=<your_PHI_endpoint>
-PHI_KEY=<your_PHI_key>
-MISTRAL_ENDPOINT=<your_MISTRAL_endpoint>
-MISTRAL_KEY=<your_MISTRAL_key>
-```
