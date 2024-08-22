@@ -6,7 +6,7 @@ from azure.core.credentials import AzureKeyCredential
 
 # Uncomment the the model you want to use
 model = Config("phi3")
-# model = config("mistral")
+# model = Config("mistral")
 
 
 # set default values for the client eg max_tokens
