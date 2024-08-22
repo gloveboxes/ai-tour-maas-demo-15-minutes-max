@@ -1,4 +1,4 @@
-from config import config
+from config import config, deobfuscate_key
 from azure.ai.inference import ChatCompletionsClient
 from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
@@ -10,7 +10,7 @@ endpoint, key = config.get("phi3")
 # set default values for the client eg max_tokens
 client = ChatCompletionsClient(
     endpoint=endpoint,
-    credential=AzureKeyCredential(key),
+    credential=AzureKeyCredential(deobfuscate_key(key)),
     max_tokens=100, 
 )
 
