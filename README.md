@@ -173,14 +173,58 @@ The playground allows people to explore generative AI using the newly deployed m
 
 ## Part 3: Introduction to the Azure AI Model Inference SDK
 
-By design, this demo is simple and will take 5 minutes max.
+By design, this demo is simple and will take 2 or so minutes max.
 
 The Azure AI Model Inference SDK simplifies integrating AI models into applications. It supports Python, JavaScript, and C#/.NET, handles authentication and retries, and offers uniform access to various models. Available for serverless and managed endpoints, it ensures secure and versatile AI integration.
 
-This demonstration is straightforward. It shows that changing models can be done without modifying the code.
+### Demo objective
 
-Follow these steps
+This demo showcases how to use the PHI and MISTRAL APIs with the Azure AI Inference SDK, allowing you to switch between models without changing the code.
 
-1. You will need the endpoint and keys for both the Phi3 and Mistral models you deployed. You can get this information from your project’s deployments card.
-2. Open the [**ai-tour-maas-demo-1**](https://github.com/gloveboxes/ai-tour-maas-demo-1) repo in Codespaces.
-3. Follow the [demo notes](inference-demo.md).
+### GitHub Codespaces
+
+You can run this template virtually by using GitHub Codespaces. The button will open a web-based VS Code instance in your browser:
+
+1. Open the template (this may take several minutes to build the Codespace):
+
+    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gloveboxes/ai-tour-maas-demo-1)
+
+### VS Code Dev Containers
+
+A related option is VS Code Dev Containers, which will open the project in your local VS Code using the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers):
+
+1. Start Docker Desktop (install it if not already installed)
+2. Open the project:
+
+    [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/gloveboxes/ai-tour-maas-demo-1)
+
+### Demo set up
+
+You will need the endpoint and keys for the Phi3 and Mistral models you deployed. This information can be found on the deployment cards for each project.
+
+Set these environment variables before running the sample.
+
+1. Rename the `.env.sample` file to `.env`.
+2. Add the following values to the `.env` file:
+
+    ```bash
+    PHI_ENDPOINT=<your_PHI_endpoint>
+    PHI_KEY=<your_PHI_key>
+    MISTRAL_ENDPOINT=<your_MISTRAL_endpoint>
+    MISTRAL_KEY=<your_MISTRAL_key>
+    ```
+
+### Demo hints
+
+This demo is best delivered in debug mode.
+
+Follow these steps:
+
+1. The project is set up to run in GitHub Codespaces. From [ai-tour-maas-demo-1](https://github.com/gloveboxes/ai-tour-maas-demo-1), select **<> Code** and then **Open with Codespaces**.
+2. Open the `main.py` file.
+3. Set the following breakpoints:
+   1. At the line where the model is loaded at `client = ChatCompletionsClient(`.
+   2. At `model_info = client.get_model_info()` to see the model information.
+4. Press F5 to start the debug session.
+5. Single step through the code to see the model info and the completion results.
+6. Uncomment the `# model = Config("mistral")` line to switch models and rerun the demo.
