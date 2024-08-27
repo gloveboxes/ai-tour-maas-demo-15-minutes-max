@@ -63,11 +63,11 @@ You should be able to use your Microsoft corporate subscription, and your Micros
 
 Follow these steps to pre-deploy the models for the demo.
 
-#### Model Availability
+### Model Availability
 
 Model availability is region dependent, so you will need to create multiple hubs based on the models you require. For the demo, create two Azure AI Studio hubs. One in East US for the Mistral model, and the other in Sweden Central for the Phi 3 model.
 
-#### Create two Azure AI Hubs
+### Create two Azure AI Hubs
 
 1. Navigate to [Azure AI Studio](https://ai.azure.com).
 2. Select **All Hubs**, then add a **New Hub**.
@@ -132,7 +132,7 @@ Repeat the process to create a project in the Central-Sweden hub
 9. **Don’t** change the deployment name.
 10. Select Deploy. The model will take a couple of minutes to deploy.
 
-### Part 2: Deploying Models as a Service
+## Part 2: Deploying Models as a Service
 
 With the demo resources in place, follow these steps:
 

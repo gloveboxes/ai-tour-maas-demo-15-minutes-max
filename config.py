@@ -5,7 +5,7 @@ dotenv.load_dotenv()
 
 
 class Config:
-    def __init__(self, model):
+    def __init__(self, model: str) -> None:
         self.model = model
         self._config = {
             "phi3": [os.getenv("PHI_ENDPOINT"), os.getenv("PHI_KEY")],

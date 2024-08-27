@@ -1,3 +1,5 @@
+# You can read about the new Python Azure AI Inference SDK at https://pypi.org/project/azure-ai-inference/
+
 from config import Config
 from azure.ai.inference import ChatCompletionsClient
 from azure.ai.inference.models import SystemMessage, UserMessage
@@ -8,8 +10,9 @@ from azure.core.credentials import AzureKeyCredential
 model = Config("phi3")
 # model = Config("mistral")
 
-
-# set default values for the client eg max_tokens
+# Create the Chat Completions client
+# Set default values for the client eg max_tokens. 
+# Defaults can be overridden in the complete method
 client = ChatCompletionsClient(
     endpoint=model.endpoint,
     credential=AzureKeyCredential(model.key),
@@ -23,6 +26,8 @@ print(f"Model name: {model_info.model_name}")
 print(f"Model provider name: {model_info.model_provider_name}")
 print(f"Model type: {model_info.model_type}")
 
+
+# Create a completion message
 response = client.complete(
     messages=[
         SystemMessage(content="You are a helpful assistant."),
@@ -30,4 +35,5 @@ response = client.complete(
     ],
 )
 
+# Print the response
 print(response.choices[0].message.content)
