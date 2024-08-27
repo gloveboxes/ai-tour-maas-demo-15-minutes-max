@@ -6,11 +6,13 @@ from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 
 
-# Uncomment the the model you want to use
+# Uncomment the model you want to use - PHI or MISTRAL
+# The emphasis here is you can use the same code to interact with different models
+
 model = Config("phi3")
 # model = Config("mistral")
 
-# Create the Chat Completions client
+# Create the Azure Chat Completions client
 # Set default values for the client eg max_tokens. 
 # Defaults can be overridden in the complete method
 client = ChatCompletionsClient(
