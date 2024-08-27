@@ -228,3 +228,6 @@ Follow these steps:
 4. Press F5 to start the debug session.
 5. Single step through the code to see the model info and the completion results.
 6. Uncomment the `# model = Config("mistral")` line to switch models and rerun the demo.
+7. Rerun the demo to see the model switch to emphasize the flexibility of the Azure AI Model Inference SDK.
+
+Congratulations! You have successfully completed the demo.
