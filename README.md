@@ -2,7 +2,7 @@
 
 This demo showcases how to use the PHI and MISTRAL APIs with the Azure AI Inference SDK, allowing you to switch between models without changing the code.
 
-### GitHub Codespaces
+## GitHub Codespaces
 
 You can run this template virtually by using GitHub Codespaces. The button will open a web-based VS Code instance in your browser:
 
@@ -10,7 +10,7 @@ You can run this template virtually by using GitHub Codespaces. The button will 
 
     [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gloveboxes/ai-tour-maas-demo-1)
 
-### VS Code Dev Containers
+## VS Code Dev Containers
 
 A related option is VS Code Dev Containers, which will open the project in your local VS Code using the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers):
 
