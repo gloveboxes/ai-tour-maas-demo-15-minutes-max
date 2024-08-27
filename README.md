@@ -2,11 +2,11 @@
 
 ## Introduction to the Demo Document
 
-There are three parts:
+There are three parts to the demo.
 
-- Part 1: Setting up demo resources
-- Part 2: Deploying models as a service
-- Part 3: Introduction to the Azure AI Model Inference SDK
+- [Part 1: Setting up demo resources](#part-1-setting-up-demo-resources)
+- [Part 2: Deploying models as a service](#part-2-deploying-models-as-a-service)
+- [Part 3: Introduction to the Azure AI Model Inference SDK](#part-3-introduction-to-the-azure-ai-model-inference-sdk)
 
 ## Demo Goal
 
@@ -14,13 +14,21 @@ The goal is to showcase the variety of models accessible through Azure AI Studio
 
 ## Terms Used
 
-### Models as a Service
+### Azure AI Studio
 
-Navigating the Model Catalog in Azure AI Studio, you'll find options to filter for Serverless and Managed Compute deployments. Deploying Managed Computers demands more resources and isn't as simple as implementing Serverless Models. This demo will concentrate on the pay-as-you-go approach for Serverless deployments.
+Azure AI Studio is a platform that enables developers to build, deploy, and manage AI models. It provides a range of pre-trained models that can be deployed as a service, as well as tools for training custom models.
+
+### AI Studio Models as a Service
+
+Azure AI Studio Models as a Service (MaaS) are pre-trained models that can be deployed as a service. They are accessible via REST APIs and SDKs and can be used for a variety of tasks, including text generation, text completion, and text classification.
 
 ### Serverless Models
 
-Serverless models are deployed on-demand and are cost-effective. They are ideal for low to moderate usage scenarios. The models are deployed as a service and can be accessed via REST APIs.
+Serverless models are deployed on-demand and are cost-effective. They are ideal for low to moderate usage scenarios. The models are deployed as a service and can be accessed via REST APIs and SDKs. This demo uses serverless models.
+
+### Managed Compute
+
+Managed compute models are deployed on dedicated resources and are ideal for high-usage scenarios. They are more expensive than serverless models but offer better performance and scalability.
 
 ### AI Studio Hubs
 
@@ -28,7 +36,7 @@ Azure AI Studio Hubs are the units of organization for models. They are deployed
 
 ### Phi3
 
-The Phi-3 model collection is the latest in Microsoft's family of Small Language Models (SLMs). They are designed to be highly capable and cost-effective, outperforming models of similar and larger sizes across various benchmarks in language, reasoning, coding, and math.
+The [Phi-3 model](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) collection is the Microsoft's family of Small Language Models (SLMs). They are designed to be highly capable and cost-effective, outperforming models of similar and larger sizes across various benchmarks in language, reasoning, coding, and math.
 
 ### Mistral
 
@@ -36,7 +44,7 @@ Mistral is a large language model available from [Mistral AI](https://mistral.ai
 
 ## Considerations
 
-- Reproducible. Models that are generally available.
+- Reproducible. Models selected for the demo should be generally available for your subscription.
 - Model availability
   - To keep simple, two models Mistral and Phi 3
     - Requires two Hubs
@@ -51,80 +59,80 @@ You should be able to use your Microsoft corporate subscription, and your Micros
 
 ## Part 1: Setting up demo resources
 
-## Deploy the Mistral and Phi models
+### Deploy the Mistral and Phi models
 
 Follow these steps to pre-deploy the models for the demo.
 
-### Model Availability
+#### Model Availability
 
 Model availability is region dependent, so you will need to create multiple hubs based on the models you require. For the demo, create two Azure AI Studio hubs. One in East US for the Mistral model, and the other in Sweden Central for the Phi 3 model.
 
-### Create two Azure AI Hubs
+#### Create two Azure AI Hubs
 
-1. From browser, navigate to <https://ai.azure.com>
-2. Select **All Hubs**, then add a **New Hub**
-3. Name your hub, be sure to include the location to make it easier to find (eg east-us)
-4. Create or reuse existing resource group
-5. Set the location to **East US**
-6. Create or reuse an existing Azure AI Service
-7. **Skip** connecting to Azure AI Search
-8. Select **Next**
+1. Navigate to [Azure AI Studio](https://ai.azure.com).
+2. Select **All Hubs**, then add a **New Hub**.
+3. Name your hub, be sure to include the location to make it easier to find (eg east-us).
+4. Create or reuse an existing resource group.
+5. Set the location to **East US** for the Mistral model.
+6. Create or reuse an existing Azure AI Service.
+7. **Skip** connecting to Azure AI Search.
+8. Select **Next**.
 9. Select **Create**. It takes a couple of minutes to create the hub.
-10. **Repeat** the process to create a hub in Sweden Central to deploy a Phi 3.
+10. **Repeat** the process to create a hub in Sweden Central for the Phi 3 model.
 
     ![AI Studio Media Hubs](media/azure-ai-new-hub.png)
 
-## Create Projects
+### Create Projects
 
 You’ll need to create a new project for both the hubs.
 
-### Create a project in East US
+#### Create a project in East US
 
-1. **Select** the hub you create in **East US**
-2. **Name** your project **ai-tour-fy25-mistral.**
-3. Select **create**
+1. **Select** the hub you create in **East US**.
+2. **Name** your project **ai-tour-fy25-mistral**.
+3. Select **create**.
 
-### Add a model
+#### Add a model
 
 1. **Select** the Model Catalog from the sidebar menu
 
     ![model catalog](media/model-catalog.png)
 
-### Set the following filters
+#### Set the following filters
 
-1. Select **Serverless**, and **Mistral**
+1. Select **Serverless**, and **Mistral**.
 
     ![filter available models](media/filter-models.png)
 
-2. Select **Mistral-large-2407**
-3. **Review** the model card
-4. Select **Deploy**
-5. **Acknowledge** Microsoft Purchase policy
-    1. This will take a couple of minutes
-6. **Don’t** change the deployment name
-7. Select **Deploy**
+2. Select **Mistral-large-2407**.
+3. **Review** the model card.
+4. Select **Deploy**.
+5. **Acknowledge** Microsoft Purchase policy.
+    1. This will take a couple of minutes.
+6. **Don’t** change the deployment name.
+7. Select **Deploy**.
     1. This will take a couple of minutes to deploy.
 
     ![Mistral Deployment](media/model-card.png)
 
-8. **Wait** until provisioning state changes to **Succeeded**
+8. **Wait** until provisioning state changes to **Succeeded**.
 
-### Create a Phi Model Deployment in Sweden
+#### Create a Phi Model Deployment in Sweden
 
 Repeat the process to create a project in the Central-Sweden hub
 
-1. Name the project **ai-tour-fy25-phi-3.**
-2. Select **Create a project.**
+1. Name the project **ai-tour-fy25-phi-3**.
+2. Select **Create a project**.
 3. **Select** the **Model Catalog** from the sidebar menu.
-4. Set the following **filters** to **Serverless API**, and **Microsoft**
+4. Set the following **filters** to **Serverless API**, and **Microsoft**.
 5. Select **Phi-3-small-8k-instruct**.
 6. **Review** the model card.
 7. Select **Deploy**.
-8. Select **Serverless API with Azure AO Content Safety**
-9. **Don’t** change the deployment name
+8. Select **Serverless API with Azure AO Content Safety**.
+9. **Don’t** change the deployment name.
 10. Select Deploy. The model will take a couple of minutes to deploy.
 
-## Part 2: Deploying Models as a Service
+### Part 2: Deploying Models as a Service
 
 With the demo resources in place, follow these steps:
 
@@ -133,34 +141,34 @@ This will take between 5 and 10 minutes, take time to discuss and highlight gett
 ### Hubs
 
 1. **Show** how to **create a Hub** – but in the interests of time, **don’t** create.
-2. **Select** your **Sweden Central hub**
+2. **Select** your **Sweden Central hub**.
 
 ### Projects
 
 1. **Select All Projects** from the left-hand menu bar.
-2. Highlight the **existing project**
+2. Highlight the **existing project**.
 3. **Show** how to **create a new project** – but in the interests of time, don’t create.
 4. **Select** the **existing project** in the Sweden Central Hub.
 
 ### Model Catalog
 
-1. **Select** Model Catalog from the **left-hand menu bar.**
+1. **Select** Model Catalog from the **left-hand menu bar**.
 2. Show setting **model filters** – in this case, select **Serverless API** and **Microsoft**. This will highlight the **Phi** model family.
 3. Select one of the models, **discuss the model card**, highlight the resources, link to the resources to show the getting started samples.
 4. Select Deploy, discuss, but in the interests of time, **cancel** the deployment.
 
 ### Deployments
 
-1. Select **Deployments** from the left-hand menu bar
-2. Select the existing model
+1. Select **Deployments** from the left-hand menu bar.
+2. Select the existing model.
 
 ### Playground
 
 The playground allows people to explore generative AI using the newly deployed model. This is not a prompt engineering session, so suggest keeping the demo short enough to highlight there is a playground experience.
 
-1. Select **Open in Playground**
-2. Discuss that you can add your own data
-3. Discuss that you can set the System message
+1. Select **Open in Playground**.
+2. Discuss that you can add your own data.
+3. Discuss that you can set the System message.
 4. Start chatting with the model with your favorite prompts.
 
 ## Part 3: Introduction to the Azure AI Model Inference SDK
