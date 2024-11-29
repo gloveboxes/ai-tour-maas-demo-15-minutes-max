@@ -91,8 +91,7 @@ Follow these steps to pre-deploy the models for the demo.
 2. Select **Mistral-large-2407**.
 3. **Review** the model card.
 4. Select **Deploy**.
-5. **Acknowledge** Microsoft Purchase policy.
-    1. This will take a couple of minutes.
+5. Read the terms of use and **Agree and Proceed**.
 6. **Don’t** change the deployment name.
 7. Select **Deploy**.
     1. This will take a couple of minutes to deploy.
@@ -108,7 +107,7 @@ Follow these steps to pre-deploy the models for the demo.
 3. Select **Phi-3-small-8k-instruct**.
 4. **Review** the model card.
 5. Select **Deploy**.
-6. Select **Serverless API with Azure AO Content Safety**.
+6. Read the terms of use and **Agree and Proceed**.
 7. **Don’t** change the deployment name.
 8. Select Deploy. The model will take a couple of minutes to deploy.
 
