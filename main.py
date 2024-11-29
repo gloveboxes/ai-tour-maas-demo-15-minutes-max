@@ -9,8 +9,8 @@ from azure.core.credentials import AzureKeyCredential
 # Uncomment the model you want to use - PHI or MISTRAL
 # The emphasis here is you can use the same code to interact with different models
 
-model = Config("phi3")
-# model = Config("mistral")
+#model = Config("phi3")
+model = Config("mistral")
 
 # Create the Azure Chat Completions client
 # Set default values for the client eg max_tokens. 
